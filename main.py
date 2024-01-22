@@ -1,3 +1,4 @@
+#parent class
 class User():
     def __init__( self, name, age, gender):
         self.name = name
@@ -8,4 +9,30 @@ class User():
     def show_details(self) :
      print("Personal Details")
      print("")
-     print
+     print("Name", self.name)
+     print("Age" , self.age)
+     print("Gender ", self.gender)
+
+#child class
+     class Bank(User):
+        def __init__(self, name, age, gender):
+           super().__init__(name, age, gender)
+           self.balance = 0
+
+           def deposit(self, amount):
+              self.amount = amount
+              self.balance = self.balance +self.amount
+              print("Account balance has been updated: $" , self.balance)
+
+              def withdraw(self, amount):
+                 self.amount = amount
+                 if self.amount>self.balance:
+                    print("Insufficient funds| Balance available: $" , self.balance)
+                 else:
+                    self.balance = self.balance - self.amount
+                    print("Account balance has been updated is : $" , self.balance)
+
+                    def view_balance(self):
+                       self.show_details()
+                       print("Account balance is : $" , self.balance)
+
